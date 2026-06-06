@@ -1,0 +1,68 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
+---
+
+<BaseLayout
+    title="Damien Site"
+    description="Welcome to Damien Site"
+    bodyClass="bg-[#000B17]"
+>
+    <div class="p-5 fixed top-0 z-50 w-full">
+        <nav
+            class="w-full p-4 lg:p-6 flex items-center justify-between gap-4 border border-white/20 rounded-2xl"
+        >
+            <div>
+                <Image
+                    src={import("@/assets/logo-nav.svg")}
+                    alt={"Damien Duhamel"}
+                />
+            </div>
+                <ul class="flex items-center">
+                   <li></li>
+                </ul>
+        </nav>
+    </div>
+    <main>
+        <section
+            id="hero"
+            class="px-4 lg:px-5 relative min-h-dvh flex flex-col h-full justify-end overflow-hidden"
+        >
+            <Image
+                src={import("@/assets/hero-bg.png")}
+                alt="hero background"
+                class="absolute inset-0 lg:min-w-dvw object-cover"
+            />
+            <div
+                class="relative flex flex-col items-center justify-end py-24 h-full"
+            >
+                <h1
+                    class="text-white font-serif text-2xl lg:text-[40px] text-center inline-flex flex-col"
+                >
+                    <span class="italic">Middle East & Asia</span>
+                    <span
+                        class="uppercase font-sans font-bold text-4xl lg:text-8xl"
+                        >Transformation</span
+                    >
+                    <span class="italic">Strategy</span>
+                </h1>
+                <p class="text-base text-white/75 mt-5 lg:mt-10 text-center">
+                    Help clients build long-lasting competitive advantage and
+                    accelerate profitable growth<br />
+                    in the dynamic and complex markets of Asia and the Middle East.
+                </p>
+            </div>
+            <div class="flex flex-col items-center justify-center gap-1">
+                <span
+                    class="text-white font-light text-xs text-center tracking-widest uppercase"
+                    >Scroll</span
+                >
+                <div
+                    class="w-px h-6 bg-linear-to-b from-white toto-transparent"
+                >
+                </div>
+            </div>
+        </section>
+    </main>
+</BaseLayout>

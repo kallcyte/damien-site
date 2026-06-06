@@ -1,0 +1,37 @@
+@import "tailwindcss";
+@import "@fontsource-variable/playfair-display";
+@import "@fontsource-variable/plus-jakarta-sans";
+
+@theme {
+    --font-serif:
+        "Playfair Display Variable", ui-serif, Georgia, Cambria,
+        "Times New Roman", Times, serif;
+    --font-sans:
+        "Plus Jakarta Sans Variable", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+        "Noto Color Emoji";
+}
+
+@layer base {
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+
+    html {
+        @apply font-sans antialiased;
+    }
+
+    [x-cloak] {
+        @apply hidden!;
+    }
+
+    h1,
+    h2,
+    h3 {
+        @apply leading-[0.9] tracking-tighter;
+    }
+}

@@ -1,0 +1,18 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: "example" } },
+  ];
+}
+
+const { slug } = Astro.params;
+---
+
+<BaseLayout title="Content Detail" description="Content detail page">
+  <main>
+    <h1 class="font-serif text-4xl font-bold">Content Detail</h1>
+    <p>Viewing: {slug}</p>
+  </main>
+</BaseLayout>
