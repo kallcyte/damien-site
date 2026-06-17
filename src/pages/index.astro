@@ -70,9 +70,10 @@ import { ChevronsRight } from '@lucide/astro'
                 </div>
             </div>
         </section>
-        <section id="categories" class="px-4 lg:px-5 py-10">
+        <section id="categories" class="px-4 lg:px-5 pt-5">
             <div class="flex gap-4 lg:gap-5">
-                <div
+                <a
+                    href="#"
                     class="group relative overflow-hidden p-4 md:p-6 lg:p-7.5 rounded-lg lg:rounded-2xl lg:w-1/3 hover:lg:w-10/12 duration-500 ease-out border border-white/10 lg:min-h-180 flex items-end justify-start"
                 >
                     <Image
@@ -84,7 +85,9 @@ import { ChevronsRight } from '@lucide/astro'
                         class="absolute bg-linear-to-b from-[#001246]/0 via-[#076A80]/10 to-[#001246]/50 via-75% to-90% size-full inset-0"
                     >
                     </div>
-                    <div class="flex justify-between items-center relative w-full">
+                    <div
+                        class="flex justify-between items-center relative w-full"
+                    >
                         <h2
                             class="uppercase text-2xl lg:text-4xl font-bold text-white leading-[0.9] tracking-tighter"
                         >
@@ -93,11 +96,14 @@ import { ChevronsRight } from '@lucide/astro'
                         <div
                             class="rounded-full bg-[#0DBFE6]/20 hover:bg-[#0DBFE6] duration-300 ease-out shrink-0 size-12 flex items-center justify-center opacity-0 group-hover:opacity-100"
                         >
-                            <ChevronsRight class="size-4 lg:size-6 text-white" />
+                            <ChevronsRight
+                                class="size-4 lg:size-6 text-white"
+                            />
                         </div>
                     </div>
-                </div>
-                <div
+                </a>
+                <a
+                    href="#"
                     class="group relative overflow-hidden p-4 md:p-6 lg:p-7.5 rounded-lg lg:rounded-2xl lg:w-1/3 hover:lg:w-10/12 duration-500 ease-out border border-white/10 lg:min-h-180 flex items-end justify-start"
                 >
                     <Image
@@ -109,7 +115,9 @@ import { ChevronsRight } from '@lucide/astro'
                         class="absolute bg-linear-to-b from-[#001246]/0 via-[#076A80]/10 to-[#001246]/50 via-75% to-90% size-full inset-0"
                     >
                     </div>
-                    <div class="flex justify-between items-center relative w-full">
+                    <div
+                        class="flex justify-between items-center relative w-full"
+                    >
                         <h2
                             class="uppercase text-2xl lg:text-4xl font-bold text-white leading-[0.9] tracking-tighter"
                         >
@@ -118,11 +126,14 @@ import { ChevronsRight } from '@lucide/astro'
                         <div
                             class="rounded-full bg-[#0DBFE6]/20 hover:bg-[#0DBFE6] duration-300 ease-out shrink-0 size-12 flex items-center justify-center opacity-0 group-hover:opacity-100"
                         >
-                            <ChevronsRight class="size-4 lg:size-6 text-white" />
+                            <ChevronsRight
+                                class="size-4 lg:size-6 text-white"
+                            />
                         </div>
                     </div>
-                </div>
-                <div
+                </a>
+                <a
+                    href="#"
                     class="group relative overflow-hidden p-4 md:p-6 lg:p-7.5 rounded-lg lg:rounded-2xl lg:w-1/3 hover:lg:w-10/12 duration-500 ease-out border border-white/10 lg:min-h-180 flex items-end justify-start"
                 >
                     <Image
@@ -134,7 +145,9 @@ import { ChevronsRight } from '@lucide/astro'
                         class="absolute bg-linear-to-b from-[#001246]/0 via-[#076A80]/10 to-[#001246]/50 via-75% to-90% size-full inset-0"
                     >
                     </div>
-                    <div class="flex justify-between items-center relative w-full">
+                    <div
+                        class="flex justify-between items-center relative w-full"
+                    >
                         <h2
                             class="uppercase text-2xl lg:text-4xl font-bold text-white leading-[0.9] tracking-tighter"
                         >
@@ -143,7 +156,124 @@ import { ChevronsRight } from '@lucide/astro'
                         <div
                             class="rounded-full bg-[#0DBFE6]/20 hover:bg-[#0DBFE6] duration-300 ease-out shrink-0 size-12 flex items-center justify-center opacity-0 group-hover:opacity-100"
                         >
-                            <ChevronsRight class="size-4 lg:size-6 text-white" />
+                            <ChevronsRight
+                                class="size-4 lg:size-6 text-white"
+                            />
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+        <section id="about" class="px-4 lg:px-5 pt-5">
+            <div class="flex gap-4 lg:gap-5">
+                <div class="lg:w-2/5 grid lg:grid-rows-2 lg:gap-5">
+                    <div class="grid lg:grid-cols-2 lg:gap-5">
+                        <div
+                            class="relative rounded-lg lg:rounded-2xl overflow-hidden"
+                        >
+                            <Image
+                                src={import('@/assets/speaker-2.jpg')}
+                                alt="Damien"
+                                class="absolute inset-0 size-full object-cover"
+                            />
+                            <div
+                                class="absolute bg-linear-to-b from-[#001246]/0 via-[#076A80]/10 to-[#001246]/50 via-75% to-90% size-full inset-0"
+                            >
+                            </div>
+                        </div>
+                        <div
+                            class="relative rounded-lg lg:rounded-2xl overflow-hidden"
+                        >
+                            <Image
+                                src={import('@/assets/building-1.jpg')}
+                                alt="Damien"
+                                class="absolute inset-0 size-full object-cover"
+                            />
+                            <div
+                                class="absolute bg-linear-to-b from-[#001246]/0 via-[#076A80]/10 to-[#001246]/50 via-75% to-90% size-full inset-0"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="relative rounded-lg lg:rounded-2xl overflow-hidden"
+                    >
+                        <Image
+                            src={import('@/assets/building-2.jpg')}
+                            alt="Damien"
+                            class="absolute inset-0 size-full object-cover"
+                        />
+                        <div
+                            class="absolute bg-linear-to-b from-[#001246]/0 via-[#076A80]/10 to-[#001246]/50 via-75% to-90% size-full inset-0"
+                        >
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="lg:w-3/5 rounded-lg lg:rounded-2xl bg-white lg:p-32"
+                >
+                    <div class="w-full flex flex-col items-center">
+                        <span
+                            class="text=[#001246] uppercase tracking-[0.15em] font-light text-base text-center mb-5"
+                            >About</span
+                        >
+                        <h2
+                            class="text-[#001246] mb-10 font-serif text-2xl lg:text-[40px] inline-flex items-center justify-center text-center flex-wrap leading-none"
+                        >
+                            <span
+                                class="italic inline-flex items-end justify-end text-right mr-2"
+                                >Middle East <br class="hidden 2xl:inline" />
+                                & Asia</span
+                            >
+                            <span
+                                class="uppercase font-sans font-bold text-4xl lg:text-8xl leading-none"
+                                >Growth</span
+                            >
+                            <span
+                                class="uppercase font-sans font-bold text-4xl lg:text-8xl leading-none"
+                                >Strategy</span
+                            >
+                            <span
+                                class="italic inline-flex flex-col items-end justify-end text-right mr-2 self-end mb-3"
+                                >Advisory</span
+                            >
+                        </h2>
+                        <div class="flex flex-col gap-5 items-center text-center [&_p]:leading-normal [&_p]:text-base text-[#1e1e1e]/90 max-w-3xl">
+                            <p>
+                                Damien Duhamel is a seasoned corporate
+                                strategist and growth expert with over 20 years
+                                of experience in leading and advising
+                                organizations across Asia and the Middle East.
+                                He is the Managing Partner Middle East & Asia
+                                for Eurogroup Consulting, a global management
+                                consulting firm that supports clients in their
+                                growth, transformation, and digital journey.
+                                Damien was the co-founder and Board Member of
+                                Solidiance, a leading Asia-focused strategic
+                                advisory firm that was set up in 2006 and sold
+                                to YCP, a Japanese listed group, in 2019.
+                            </p>
+                            <p>
+                                Damien’s mission is to help clients build
+                                long-lasting competitive advantage and
+                                accelerate profitable growth in the dynamic and
+                                complex markets of Asia and the Middle East. He
+                                has extensive experience in delivering strategic
+                                insights and solutions in areas such as
+                                disruptive innovation, B2B digital strategy,
+                                market entry strategy, competitive intelligence,
+                                M&A due diligence, and PMO. He has worked with
+                                clients from various sectors, including
+                                industrial, automotive, energy, healthcare,
+                                technology, and public sector. Damien has also
+                                been a speaker and author on topics such as
+                                urbanization, disruptive innovation,
+                                digitalization, and the Silk Road. He speaks
+                                English, French, Vietnamese, and some Japanese.
+                                Damien has lived and worked in over 15 countries
+                                in Asia and the Middle East, as well as in
+                                Australia, Europe, and Africa.
+                            </p>
                         </div>
                     </div>
                 </div>
