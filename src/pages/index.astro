@@ -13,30 +13,35 @@ import ArrowRight from 'phosphor-astro/ArrowRight.astro'
     description="Welcome to Damien Site"
     bodyClass="bg-[#000B17]"
 >
-    <div class="p-5 fixed top-0 z-50 w-full">
+    <div
+        class="fixed top-0 z-50 w-full duration-300 ease-out"
+        x-data="{ scrolled: false }"
+        x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 100 })"
+        :class="scrolled ? 'p-0' : 'p-5'"
+    >
         <nav
-            x-data="{ scrolled: false }"
-            x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 100 })"
-            :class="scrolled ? 'bg-black/20 backdrop-blur-md' : ''"
-            class="w-full p-4 lg:p-6 flex items-center justify-between gap-4 border border-white/20 rounded-2xl transition-all duration-300"
+            :class="scrolled ? 'bg-[#000B17] border-b' : 'rounded-2xl border'"
+            class="w-full border-white/20 transition-all duration-300"
         >
-            <div>
-                <Image
-                    src={import('@/assets/logo-nav.svg')}
-                    alt={'Damien Duhamel'}
-                />
+            <div class="max-w-480 mx-auto flex items-center justify-between gap-4 w-full p-4 lg:p-6">
+                <div>
+                    <Image
+                        src={import('@/assets/logo-nav.svg')}
+                        alt={'Damien Duhamel'}
+                    />
+                </div>
+                <ul
+                    class="flex items-center gap-4 lg:gap-8 [&_li]:tracking-widest [&_li]:font-light [&_li]:text-white/80 [&_li]:hover:text-white [&_li]:uppercase"
+                >
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Insights</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
             </div>
-            <ul
-                class="flex items-center gap-4 lg:gap-8 [&_li]:tracking-widest [&_li]:font-light [&_li]:text-white/80 [&_li]:hover:text-white [&_li]:uppercase"
-            >
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Insights</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
         </nav>
     </div>
-    <main>
+    <main class="max-w-480 mx-auto">
         <section
             id="hero"
             class="px-4 lg:px-5 relative min-h-dvh flex flex-col h-full justify-end overflow-hidden"
@@ -575,7 +580,9 @@ import ArrowRight from 'phosphor-astro/ArrowRight.astro'
                             >Publications</span
                         >
                     </div>
-                    <div class="rounded-full p-3 bg-[#0DBFE6]/20 group-hover:bg-white duration-300 ease-out shrink-0">
+                    <div
+                        class="rounded-full p-3 bg-[#0DBFE6]/20 group-hover:bg-white duration-300 ease-out shrink-0"
+                    >
                         <ArrowRight class="text-[#001246] size-6" />
                     </div>
                 </a>
@@ -591,6 +598,230 @@ import ArrowRight from 'phosphor-astro/ArrowRight.astro'
                 </a>
             </div>
         </section>
-        <section id="contact" class="bg-white px-4 lg:px-5 py-5"></section>
+        <section
+            id="contact"
+            class="bg-white px-4 lg:px-5 py-12 lg:py-25 relative"
+        >
+            <Image
+                src={import('@/assets/contact-bg.svg')}
+                alt=""
+                class="w-full h-auto object-cover inset-x-0 bottom-0 absolute max-h-1/2 object-top"
+            />
+            <div class="relative w-full flex flex-col items-center">
+                <span
+                    class="text-[#001246] uppercase tracking-[0.15em] font-light text-base text-center mb-5"
+                    >Contact</span
+                >
+                <h2
+                    class="text-[#001246] mb-5 font-serif text-2xl lg:text-[40px] inline-flex flex-col items-center justify-center text-center flex-wrap leading-none"
+                >
+                    <span
+                        class="italic inline-flex items-end justify-end text-right mr-2"
+                        >Let’s Start a</span
+                    >
+                    <span
+                        class="uppercase font-sans font-bold text-4xl lg:text-8xl leading-[0.9]"
+                        >Conversation</span
+                    >
+                </h2>
+                <p class="font-light text-base leading-tight text-[#1e1e1e]/90">
+                    Whether you’re seeking advisory support to enter Middle East
+                    & Asia
+                </p>
+            </div>
+            <div
+                class="relative w-full max-w-4xl mx-auto mt-10 lg:mt-20"
+                x-data="formHandler"
+            >
+                <form
+                    @submit.prevent="validateForm"
+                    x-ref="form"
+                    class="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 w-full"
+                >
+                    <div class="input-class">
+                        <label
+                            class:list={[
+                                'font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm',
+                                '[&_span]:text-red-500 text-[#001246]',
+                            ]}>First Name<span>*</span></label
+                        ><input
+                            required
+                            x-model="formData.firstName"
+                            class:list={[
+                                'flex h-auto w-full outline-hidden ring-0 disabled:cursor-not-allowed disabled:opacity-50 bg-transparent px-0 py-3 text-sm rounded-none border-b duration-300 ease-out',
+                                'border-[#001246]/20 focus-within:border-[#001246] text-[#001246] placeholder:text-[#001246]/60',
+                            ]}
+                            placeholder="Enter First Name"
+                            name="firstName"
+                            aria-invalid="false"
+                            value=""
+                        />
+                    </div>
+                    <div class="input-class">
+                        <label
+                            class:list={[
+                                'font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm',
+                                '[&_span]:text-red-500 text-[#001246]',
+                            ]}>Last Name<span>*</span></label
+                        ><input
+                            required
+                            x-model="formData.lastName"
+                            class:list={[
+                                'flex h-auto w-full outline-hidden ring-0 disabled:cursor-not-allowed disabled:opacity-50 bg-transparent px-0 py-3 text-sm rounded-none border-b duration-300 ease-out',
+                                'border-[#001246]/20 focus-within:border-[#001246] text-[#001246] placeholder:text-[#001246]/60',
+                            ]}
+                            placeholder="Enter Last Name"
+                            name="lastName"
+                            aria-invalid="false"
+                            value=""
+                        />
+                    </div>
+                    <div class="input-class">
+                        <label
+                            class:list={[
+                                'font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm',
+                                '[&_span]:text-red-500 text-[#001246]',
+                            ]}>Job Title<span>*</span></label
+                        ><input
+                            required
+                            x-model="formData.jobTitle"
+                            class:list={[
+                                'flex h-auto w-full outline-hidden ring-0 disabled:cursor-not-allowed disabled:opacity-50 bg-transparent px-0 py-3 text-sm rounded-none border-b duration-300 ease-out',
+                                'border-[#001246]/20 focus-within:border-[#001246] text-[#001246] placeholder:text-[#001246]/60',
+                            ]}
+                            placeholder="Enter Job Title"
+                            name="jobTitle"
+                            aria-invalid="false"
+                            value=""
+                        />
+                    </div>
+                    <div class="input-class">
+                        <label
+                            class:list={[
+                                'font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm',
+                                '[&_span]:text-red-500 text-[#001246]',
+                            ]}>Company Name<span>*</span></label
+                        ><input
+                            required
+                            x-model="formData.companyName"
+                            class:list={[
+                                'flex h-auto w-full outline-hidden ring-0 disabled:cursor-not-allowed disabled:opacity-50 bg-transparent px-0 py-3 text-sm rounded-none border-b duration-300 ease-out',
+                                'border-[#001246]/20 focus-within:border-[#001246] text-[#001246] placeholder:text-[#001246]/60',
+                            ]}
+                            placeholder="Enter Company Name"
+                            name="companyName"
+                            aria-invalid="false"
+                            value=""
+                        />
+                    </div>
+                    <div class="input-class">
+                        <label
+                            class:list={[
+                                'font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm',
+                                '[&_span]:text-red-500 text-[#001246]',
+                            ]}>Country<span>*</span></label
+                        ><input
+                            required
+                            x-model="formData.country"
+                            class:list={[
+                                'flex h-auto w-full outline-hidden ring-0 disabled:cursor-not-allowed disabled:opacity-50 bg-transparent px-0 py-3 text-sm rounded-none border-b duration-300 ease-out',
+                                'border-[#001246]/20 focus-within:border-[#001246] text-[#001246] placeholder:text-[#001246]/60',
+                            ]}
+                            placeholder="Enter Your Country"
+                            name="country"
+                            aria-invalid="false"
+                            value=""
+                        />
+                    </div>
+                    <div class="input-class">
+                        <label
+                            class:list={[
+                                'font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm',
+                                '[&_span]:text-red-500 text-[#001246]',
+                            ]}>Phone Number<span>*</span></label
+                        ><input
+                            required
+                            x-model="formData.phoneNumber"
+                            type="tel"
+                            class:list={[
+                                'flex h-auto w-full outline-hidden ring-0 disabled:cursor-not-allowed disabled:opacity-50 bg-transparent px-0 py-3 text-sm rounded-none border-b duration-300 ease-out',
+                                'border-[#001246]/20 focus-within:border-[#001246] text-[#001246] placeholder:text-[#001246]/60',
+                            ]}
+                            placeholder="Enter Phone Number"
+                            name="phoneNumber"
+                            aria-invalid="false"
+                            value=""
+                        />
+                    </div>
+                    <div class="lg:col-span-2">
+                        <label
+                            class:list={[
+                                'font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm',
+                                '[&_span]:text-red-500 text-[#001246]',
+                            ]}>Corporate Email<span>*</span></label
+                        ><input
+                            required
+                            x-model="formData.corporateEmail"
+                            type="email"
+                            class:list={[
+                                'flex h-auto w-full outline-hidden ring-0 disabled:cursor-not-allowed disabled:opacity-50 bg-transparent px-0 py-3 text-sm rounded-none border-b duration-300 ease-out',
+                                'border-[#001246]/20 focus-within:border-[#001246] text-[#001246] placeholder:text-[#001246]/60',
+                            ]}
+                            placeholder="Enter Corporate Email"
+                            name="corporateEmail"
+                            aria-invalid="false"
+                            value=""
+                        />
+                    </div>
+                    <div class="lg:col-span-2 input-class">
+                        <label
+                            class:list={[
+                                'font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm',
+                                '[&_span]:text-red-500 text-[#001246]',
+                            ]}>Message<span>*</span></label
+                        ><textarea
+                            required
+                            name="message"
+                            x-model="formData.message"
+                            class:list={[
+                                'flex h-auto w-full outline-hidden ring-0 disabled:cursor-not-allowed disabled:opacity-50 bg-transparent px-0 py-3 text-sm rounded-none border-b duration-300 ease-out',
+                                'border-[#001246]/20 focus-within:border-[#001246] text-[#001246] placeholder:text-[#001246]/60',
+                            ]}
+                            role="textbox"
+                            rows="5"
+                            placeholder="Write Your Message Here..."
+                            aria-invalid="false"
+                        >
+                        </textarea>
+                    </div>
+                    <div class="lg:col-span-2 flex justify-center">
+                        <button
+                            class="group cursor-pointer inline-flex items-center gap-4 lg:gap-6"
+                            type="submit"
+                        >
+                            <span
+                                class="text-[#001246] uppercase tracking-[0.15em] font-medium text-base text-center border-b border-white/75"
+                                style="border-image: repeating-linear-gradient(90deg, currentColor 0 4px, transparent 4px 8px) 1"
+                                >Send Message</span
+                            >
+                            <div
+                                class="rounded-full p-3 bg-[#0DBFE6]/20 group-hover:bg-[#001246] duration-300 ease-out"
+                            >
+                                <ArrowRight
+                                    class="text-[#001246] group-hover:text-white size-6"
+                                />
+                            </div>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <footer
+            class="bg-[##001246] flex justify-center items-center p-4 lg:p-5"
+        >
+            <p class="text-white text-xs font-medium">
+                © Damien Duhamel. All Rights Reserved.
+            </p>
+        </footer>
     </main>
 </BaseLayout>
