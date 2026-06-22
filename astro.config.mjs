@@ -12,5 +12,5 @@ export default defineConfig({
   image: {
     layout: "full-width",
   },
-  integrations: [alpinejs()],
+  integrations: [alpinejs({ entrypoint: "/src/utils/script.ts" })],
 });
