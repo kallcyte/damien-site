@@ -253,54 +253,8 @@ import ArrowRight from 'phosphor-astro/ArrowRight.astro'
         </section>
         <section id="about" class="px-4 lg:px-5 pt-5 overflow-hidden" data-gsap-about>
             <div class="flex flex-col lg:flex-row gap-4 lg:gap-5">
-                <div class="w-full lg:w-2/5 grid lg:grid-rows-2 lg:gap-5">
-                    <div class="grid lg:grid-cols-2 gap-5">
-                        <div
-                            class="relative aspect-4/3 lg:aspect-auto rounded-lg lg:rounded-2xl overflow-hidden"
-                            data-gsap-about-img
-                        >
-                            <Image
-                                src={import('@/assets/speaker-2.jpg')}
-                                alt="Damien"
-                                class="absolute inset-0 size-full object-cover"
-                            />
-                            <div
-                                class="absolute bg-linear-to-b from-[#001246]/0 via-[#076A80]/10 to-[#001246]/50 via-75% to-90% size-full inset-0"
-                            >
-                            </div>
-                        </div>
-                        <div
-                            class="relative aspect-4/3 lg:aspect-auto rounded-lg lg:rounded-2xl overflow-hidden"
-                            data-gsap-about-img
-                        >
-                            <Image
-                                src={import('@/assets/building-1.jpg')}
-                                alt="Damien"
-                                class="absolute inset-0 size-full object-cover"
-                            />
-                            <div
-                                class="absolute bg-linear-to-b from-[#001246]/0 via-[#076A80]/10 to-[#001246]/50 via-75% to-90% size-full inset-0"
-                            >
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="relative aspect-21/9 lg:aspect-auto rounded-lg lg:rounded-2xl overflow-hidden"
-                        data-gsap-about-img
-                    >
-                        <Image
-                            src={import('@/assets/building-2.jpg')}
-                            alt="Damien"
-                            class="absolute inset-0 size-full object-cover"
-                        />
-                        <div
-                            class="absolute bg-linear-to-b from-[#001246]/0 via-[#076A80]/10 to-[#001246]/50 via-75% to-90% size-full inset-0"
-                        >
-                        </div>
-                    </div>
-                </div>
                 <div
-                    class="w-full lg:w-3/5 rounded-lg lg:rounded-2xl bg-white py-16 p-6 lg:p-16"
+                    class="w-full lg:w-3/5 lg:order-2 rounded-lg lg:rounded-2xl bg-white py-16 p-6 lg:p-16"
                     data-gsap-about-content
                 >
                     <div class="w-full flex flex-col items-center">
@@ -367,6 +321,52 @@ import ArrowRight from 'phosphor-astro/ArrowRight.astro'
                                 in Asia and the Middle East, as well as in
                                 Australia, Europe, and Africa.
                             </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-2/5 lg:order-1 grid lg:grid-rows-2 gap-5">
+                    <div class="grid lg:grid-cols-2 gap-5">
+                        <div
+                            class="relative aspect-4/3 lg:aspect-auto rounded-lg lg:rounded-2xl overflow-hidden"
+                            data-gsap-about-img
+                        >
+                            <Image
+                                src={import('@/assets/speaker-2.jpg')}
+                                alt="Damien"
+                                class="absolute inset-0 size-full object-cover"
+                            />
+                            <div
+                                class="absolute bg-linear-to-b from-[#001246]/0 via-[#076A80]/10 to-[#001246]/50 via-75% to-90% size-full inset-0"
+                            >
+                            </div>
+                        </div>
+                        <div
+                            class="relative aspect-4/3 lg:aspect-auto rounded-lg lg:rounded-2xl overflow-hidden"
+                            data-gsap-about-img
+                        >
+                            <Image
+                                src={import('@/assets/building-1.jpg')}
+                                alt="Damien"
+                                class="absolute inset-0 size-full object-cover"
+                            />
+                            <div
+                                class="absolute bg-linear-to-b from-[#001246]/0 via-[#076A80]/10 to-[#001246]/50 via-75% to-90% size-full inset-0"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="relative aspect-21/9 lg:aspect-auto rounded-lg lg:rounded-2xl overflow-hidden"
+                        data-gsap-about-img
+                    >
+                        <Image
+                            src={import('@/assets/building-2.jpg')}
+                            alt="Damien"
+                            class="absolute inset-0 size-full object-cover"
+                        />
+                        <div
+                            class="absolute bg-linear-to-b from-[#001246]/0 via-[#076A80]/10 to-[#001246]/50 via-75% to-90% size-full inset-0"
+                        >
                         </div>
                     </div>
                 </div>
