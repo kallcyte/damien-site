@@ -251,12 +251,12 @@ import ArrowRight from 'phosphor-astro/ArrowRight.astro'
                 </a>
             </div>
         </section>
-        <section id="about" class="px-4 lg:px-5 pt-5" data-gsap-about>
+        <section id="about" class="px-4 lg:px-5 pt-5 overflow-hidden" data-gsap-about>
             <div class="flex flex-col lg:flex-row gap-4 lg:gap-5">
                 <div class="w-full lg:w-2/5 grid lg:grid-rows-2 lg:gap-5">
-                    <div class="grid lg:grid-cols-2 lg:gap-5">
+                    <div class="grid lg:grid-cols-2 gap-5">
                         <div
-                            class="relative rounded-lg lg:rounded-2xl overflow-hidden"
+                            class="relative aspect-4/3 lg:aspect-auto rounded-lg lg:rounded-2xl overflow-hidden"
                             data-gsap-about-img
                         >
                             <Image
@@ -270,7 +270,7 @@ import ArrowRight from 'phosphor-astro/ArrowRight.astro'
                             </div>
                         </div>
                         <div
-                            class="relative rounded-lg lg:rounded-2xl overflow-hidden"
+                            class="relative aspect-4/3 lg:aspect-auto rounded-lg lg:rounded-2xl overflow-hidden"
                             data-gsap-about-img
                         >
                             <Image
@@ -285,7 +285,7 @@ import ArrowRight from 'phosphor-astro/ArrowRight.astro'
                         </div>
                     </div>
                     <div
-                        class="relative rounded-lg lg:rounded-2xl overflow-hidden"
+                        class="relative aspect-21/9 lg:aspect-auto rounded-lg lg:rounded-2xl overflow-hidden"
                         data-gsap-about-img
                     >
                         <Image
@@ -300,7 +300,7 @@ import ArrowRight from 'phosphor-astro/ArrowRight.astro'
                     </div>
                 </div>
                 <div
-                    class="w-full lg:w-3/5 rounded-lg lg:rounded-2xl bg-white py-16 p-6 lg:p-32"
+                    class="w-full lg:w-3/5 rounded-lg lg:rounded-2xl bg-white py-16 p-6 lg:p-16"
                     data-gsap-about-content
                 >
                     <div class="w-full flex flex-col items-center">
