@@ -16,6 +16,7 @@ export default defineConfig({
     layout: "full-width",
   },
 
+  output: "hybrid",
   integrations: [alpinejs({ entrypoint: "/src/utils/script.ts" })],
   adapter: cloudflare(),
 });
